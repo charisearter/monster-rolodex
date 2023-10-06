@@ -2,9 +2,12 @@ import { Component } from 'react';
 
 class Header extends Component {
 	render() {
-		const { title = 'Title goes here' } = this.props;
+		const {
+			title = 'Title goes here',
+			className = 'header-class',
+		} = this.props;
 		return (
-			<div className='header'>
+			<div className={className}>
 				<h1>{title}</h1>
 			</div>
 		);
