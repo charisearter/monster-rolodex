@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import CardList from './components/cardList/cardList.component';
+import SearchBox from './components/searchBox/searchBox.component';
 
 class App extends Component {
 	constructor() {
@@ -29,7 +31,7 @@ class App extends Component {
 	};
 
 	render() {
-		// destructuring
+		// destructuring state and methods
 		const { monsters, searchField } = this.state;
 		const { onSearchChange } = this;
 
@@ -41,17 +43,9 @@ class App extends Component {
 		return (
 			<div className='container'>
 				<h1 className='title'>Monster Rolodex</h1>
-				{/* Search Field */}
-				<input
-					type='text'
-					className='search-box'
-					placeholder='Search Monsters'
-					onChange={onSearchChange}
-				/>
-				{/* List of Monsters */}
-				{filteredMonsters.map((monster) => {
-					return <h2 key={monster.id}>{monster.name} </h2>;
-				})}
+
+				<SearchBox onSearchChange={onSearchChange} />
+				<CardList monsters={filteredMonsters} />
 			</div>
 		);
 	}
