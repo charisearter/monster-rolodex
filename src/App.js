@@ -35,8 +35,19 @@ class App extends Component {
 				<input
 					className='search-box'
 					type='text'
-          placeholder='Search for Monster'
-          // add OnChange functionality
+					placeholder='Search for Monster'
+					// add OnChange functionality
+					onChange={(e) => {
+						console.log('Searchbox: ', e.target.value);
+						// filter gives new array
+						const filteredMonsters = monsters.filter((monster) =>
+							monster.name.includes(e.target.value)
+						);
+						// set state of filtered monsters
+						this.setState(() => {
+							return { monsters: filteredMonsters };
+						});
+					}}
 				/>
 				{/* Map over array to display names */}
 				{monsters.map((monster) => {
