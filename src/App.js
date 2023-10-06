@@ -31,6 +31,13 @@ class App extends Component {
 		return (
 			<div className='App'>
 				<h1>Hello</h1>
+				{/* Add Search component and filter*/}
+				<input
+					className='search-box'
+					type='text'
+          placeholder='Search for Monster'
+          // add OnChange functionality
+				/>
 				{/* Map over array to display names */}
 				{monsters.map((monster) => {
 					return <h2 key={monster.id}> {monster.name} </h2>;
