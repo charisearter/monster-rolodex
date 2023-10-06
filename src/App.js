@@ -39,9 +39,10 @@ class App extends Component {
 					// add OnChange functionality
 					onChange={(e) => {
 						console.log('Searchbox: ', e.target.value);
+						const searchString = e.target.value.toLowerCase();
 						// filter gives new array
 						const filteredMonsters = monsters.filter((monster) =>
-							monster.name.includes(e.target.value)
+							monster.name.toLowerCase().includes(searchString)
 						);
 						// set state of filtered monsters
 						this.setState(() => {
