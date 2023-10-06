@@ -1,6 +1,5 @@
 import { Component } from 'react';
 
-
 class Header extends Component {
 	render() {
 		const {
@@ -9,7 +8,7 @@ class Header extends Component {
 		} = this.props;
 		return (
 			<div className={className}>
-				<h1>{title}</h1>
+				<h1 className='title is-1'>{title}</h1>
 			</div>
 		);
 	}

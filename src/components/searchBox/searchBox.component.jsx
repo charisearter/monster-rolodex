@@ -1,18 +1,18 @@
-import { Component } from 'react';
-
+import { Component, Fragment } from 'react';
+import './search-box.styles.css';
 
 class SearchBox extends Component {
 	render() {
-		const { onChangeHandler, placeholder, className } = this.props;
+		const { onChangeHandler, placeholder } = this.props;
 		return (
-			<div className={`search-box ${className}`}>
+			<Fragment>
 				<input
 					type='text'
-					className={className}
+					className='search-box'
 					placeholder={placeholder}
 					onChange={onChangeHandler}
 				/>
-			</div>
+			</Fragment>
 		);
 	}
 }
