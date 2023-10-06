@@ -19,16 +19,25 @@ class App extends Component {
 			});
 	}
 
+	// Search handler
+	onSearchChange = (e) => {
+		const searchField = e.target.value.toLowerCase();
+
+		this.setState(() => {
+			return { searchField };
+		});
+	};
+
 	render() {
-		// destructuring from state
+		// destructuring
 		const { monsters, searchField } = this.state;
+		const { onSearchChange } = this;
 
 		// filter functionality
 		const filteredMonsters = monsters.filter((monster) => {
 			return monster.name.toLowerCase().includes(searchField);
 		});
 
-		
 		return (
 			<div className='container'>
 				<h1 className='title'>Monster Rolodex</h1>
@@ -37,13 +46,7 @@ class App extends Component {
 					type='text'
 					className='search-box'
 					placeholder='Search Monsters'
-					onChange={(e) => {
-						const searchField = e.target.value.toLowerCase();
-
-						this.setState(() => {
-							return { searchField };
-						});
-					}}
+					onChange={onSearchChange}
 				/>
 				{/* List of Monsters */}
 				{filteredMonsters.map((monster) => {
