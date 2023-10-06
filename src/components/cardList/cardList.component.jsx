@@ -1,4 +1,6 @@
 import { Component } from 'react';
+import Card from '../card/card.component';
+import './cardList.styles.css';
 
 class CardList extends Component {
 	render() {
@@ -7,7 +9,7 @@ class CardList extends Component {
 			<div>
 				{/* List of Monsters - not worried about filtered monsters so just named it monsters but filtered monsters array is passed as props */}
 				{monsters.map((monster) => {
-					return <h2 key={monster.id}>{monster.name} </h2>;
+					return <Card monster={monster} />;
 				})}
 			</div>
 		);
