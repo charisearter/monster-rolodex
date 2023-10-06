@@ -29,7 +29,13 @@ class App extends Component {
 		const { monsters, searchField } = this.state;
 		return (
 			<div className='container'>
-				<h1>Monster Rolodex</h1>
+				<h1 className='title'>Monster Rolodex</h1>
+				{/* Search Field */}
+
+				{/* List of Monsters */}
+				{monsters.map((monster) => {
+					return <h2 key={monster.id}>{monster.name} </h2>;
+				})}
 			</div>
 		);
 	}
